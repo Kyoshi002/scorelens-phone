@@ -6,6 +6,8 @@ Use **Open camera** or **Upload score** to read printed piano music, including m
 
 The published site contains the browser application and its recognition files. It has no account system, upload endpoint, or PC scanner dependency. The models and software download from GitHub Pages during setup. Speed, recognition accuracy and available memory depend on the device and the score. Crop photos to keep both piano staves clear.
 
+Choose **Learn to read** to explore notes on the treble and bass staves, quiz yourself, and hear or tap written rhythms. Lessons work without downloading the scanner.
+
 ## Source and licenses
 
 The application is available under the GNU Affero General Public License version 3. The public repository includes its corresponding source, including the worker and the score interpretation code. Third-party components keep their own licenses. Vendor source references, notices and build instructions accompany the distribution. Open `source/scorelens-source.zip` for the application build inputs and packaging tool.

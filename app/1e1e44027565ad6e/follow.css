@@ -1,0 +1,293 @@
+#follow-panel {
+  --follow-forest: #183b31;
+  --follow-deep: #122b24;
+  --follow-right: #d9ec9b;
+  --follow-left: #91d6cf;
+  --follow-neutral: #e0ead7;
+  --follow-wrong: #f2a397;
+  min-width: 0;
+}
+
+.follow-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 10px 16px;
+  margin-bottom: 14px;
+}
+
+.follow-controls label {
+  display: grid;
+  gap: 4px;
+  min-width: 122px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.follow-controls select,
+.follow-buttons button {
+  min-height: 42px;
+  padding: 7px 13px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.follow-controls select {
+  padding-right: 23px;
+}
+.follow-buttons {
+  display: flex;
+  gap: 7px;
+}
+.follow-buttons .follow-start {
+  min-width: 96px;
+  border-color: var(--green);
+  background: var(--green);
+  color: #fff;
+}
+
+.follow-stage {
+  overflow: hidden;
+  border: 1px solid #1b4033;
+  border-radius: 12px;
+  background: var(--follow-forest);
+}
+
+.follow-stage-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 9px 14px;
+  border-bottom: 1px solid #ffffff21;
+  background: var(--follow-deep);
+  color: #f1f8ec;
+  font-size: 12px;
+}
+
+.follow-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+.follow-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.follow-legend span::before {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--follow-right);
+  content: '';
+}
+.follow-legend .follow-l::before {
+  background: var(--follow-left);
+}
+.follow-progress {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.follow-roll {
+  position: relative;
+  height: clamp(218px, 35vh, 362px);
+  overflow: hidden;
+}
+.follow-lanes {
+  position: absolute;
+  inset: 0;
+}
+.follow-lane,
+.follow-beat,
+.follow-measure-mark,
+.follow-note,
+.follow-cursor {
+  position: absolute;
+}
+.follow-lane {
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid #ffffff12;
+}
+.follow-beat,
+.follow-measure-mark {
+  right: 0;
+  left: 0;
+  border-top: 1px solid #ffffff23;
+}
+.follow-measure-mark {
+  z-index: 1;
+  height: 0;
+  padding-left: 7px;
+  border-color: #ffffff60;
+  color: #f2f7ed;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.follow-note {
+  z-index: 2;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  min-height: 4px;
+  overflow: hidden;
+  padding-top: 2px;
+  border: 1px solid #1b40336a;
+  border-radius: 5px;
+  background: var(--follow-neutral);
+  color: #162a24;
+  font-size: clamp(10px, 1.6vw, 14px);
+  font-weight: 800;
+  line-height: 1;
+  transform: translateX(-50%);
+}
+.follow-note-right {
+  background: var(--follow-right);
+}
+.follow-note-left {
+  background: var(--follow-left);
+}
+.follow-at-line {
+  z-index: 3;
+  border-color: #f7fff0;
+}
+.follow-cursor {
+  z-index: 4;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-top: 2px solid #f3ffe4;
+}
+
+.follow-keyboard {
+  position: relative;
+  height: clamp(57px, 9vw, 85px);
+  overflow: hidden;
+  background: #eef0e5;
+}
+.follow-key {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  height: 100%;
+  padding: 0 0 3px;
+  border: 1px solid #bac8ba;
+  border-top: 0;
+  background: #f8faef;
+  color: #456053;
+  font-size: 10px;
+  font-weight: 650;
+  transform: translateX(-50%);
+}
+.follow-black {
+  z-index: 1;
+  height: 60%;
+  border-color: #14251e;
+  border-radius: 0 0 3px 3px;
+  background: #20372e;
+  color: #fff;
+}
+.follow-expected {
+  outline: 2px solid #749144;
+  outline-offset: -2px;
+  background: #e6f1cb;
+}
+.follow-black.follow-expected {
+  background: #557442;
+}
+.follow-expected-left {
+  outline-color: #478e83;
+  background: #d6f1e8;
+}
+.follow-black.follow-expected-left {
+  background: #316b63;
+}
+.follow-pressed {
+  background: #aed080;
+  color: #172e23;
+}
+.follow-black.follow-pressed {
+  background: #adc975;
+}
+.follow-expected-left.follow-pressed,
+.follow-black.follow-expected-left.follow-pressed {
+  background: var(--follow-left);
+  color: #172e23;
+}
+.follow-wrong,
+.follow-black.follow-wrong {
+  background: var(--follow-wrong);
+  color: #491b19;
+}
+
+.follow-readout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  margin-top: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.follow-readout > div {
+  padding: 0 12px 9px 0;
+  min-width: 0;
+}
+.follow-readout > div + div {
+  padding-left: 13px;
+  border-left: 1px solid var(--border);
+}
+.follow-label {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+.follow-readout strong {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 16px;
+  line-height: 1.3;
+}
+.follow-fingers,
+.follow-status {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.follow-status {
+  min-height: 2.5em;
+}
+.follow-status.follow-error {
+  color: #8d3025;
+}
+
+@media (max-width: 520px) {
+  .follow-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .follow-controls label {
+    min-width: 0;
+  }
+  .follow-buttons {
+    grid-column: 1 / -1;
+  }
+  .follow-stage-top {
+    padding-inline: 8px;
+    font-size: 11px;
+  }
+  .follow-legend {
+    gap: 3px 7px;
+  }
+  .follow-key {
+    font-size: 8px;
+  }
+}

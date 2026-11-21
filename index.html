@@ -10,10 +10,10 @@
       content="Read printed piano music with your camera, then explore each beat, note, and fingering."
     />
     <link rel="manifest" href="./manifest.webmanifest" />
-    <link rel="icon" href="./app/ac3a751ab310bcf3/icon-192.png" />
-    <link rel="apple-touch-icon" href="./app/ac3a751ab310bcf3/icon-192.png" />
-    <link rel="stylesheet" href="./app/ac3a751ab310bcf3/style.css" />
-    <link rel="stylesheet" href="./app/ac3a751ab310bcf3/follow.css" />
+    <link rel="icon" href="./app/1e1e44027565ad6e/icon-192.png" />
+    <link rel="apple-touch-icon" href="./app/1e1e44027565ad6e/icon-192.png" />
+    <link rel="stylesheet" href="./app/1e1e44027565ad6e/style.css" />
+    <link rel="stylesheet" href="./app/1e1e44027565ad6e/follow.css" />
     <title>ScoreLens · Piano score reader</title>
   </head>
   <body>
@@ -24,6 +24,7 @@
         >
         <nav aria-label="Workspace">
           <a href="#reader" id="nav-reader"><i data-icon="focus"></i>Reader</a
+          ><a href="#learn" id="nav-learn"><i data-icon="note"></i>Learn to read</a
           ><a href="#keys" id="nav-keys"><i data-icon="book"></i>Learn keys</a
           ><a href="#follow" id="nav-follow"><i data-icon="piano"></i>Play along</a
           ><a href="#library" id="nav-library"><i data-icon="bookmark"></i>Saved pieces</a>
@@ -61,7 +62,7 @@
                   <small>PIANO STUDY</small><strong>Morning Walk</strong><em>Andante</em>
                   <div class="sample-score">
                     <img
-                      src="./app/ac3a751ab310bcf3/morning-walk.png"
+                      src="./app/1e1e44027565ad6e/morning-walk.png"
                       alt="Four measures of printed piano music in three-four time"
                     />
                     <div id="sample-marks" class="marks"></div>
@@ -169,6 +170,18 @@
           </div>
         </section>
       </section>
+      <section id="learn" hidden>
+        <div class="intro">
+          <h1>Learn to read<span>.</span></h1>
+          <p>Read a note, find it on the piano, or practice counting a rhythm.</p>
+        </div>
+        <div class="reading-picker" role="group" aria-label="Choose a reading lesson">
+          <button id="study-notes" aria-pressed="true" aria-controls="note-study">Notes on the staff</button>
+          <button id="study-rhythm" aria-pressed="false" aria-controls="rhythm-study">Rhythm &amp; notation</button>
+        </div>
+        <div class="panel reading-lesson" id="note-study"></div>
+        <div class="panel reading-lesson" id="rhythm-study" hidden></div>
+      </section>
       <section id="keys" hidden>
         <div class="intro">
           <h1>Learn keys<span>.</span></h1>
@@ -260,6 +273,6 @@
       <div id="notice" role="status" aria-live="polite"></div>
     </main>
     <a class="phone-source" href="https://github.com/Kyoshi002/scorelens-phone">Source code and licenses</a>
-    <script type="module" src="./app/ac3a751ab310bcf3/app.js"></script>
+    <script type="module" src="./app/1e1e44027565ad6e/app.js"></script>
   </body>
 </html>
