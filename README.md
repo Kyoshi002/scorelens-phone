@@ -6,7 +6,7 @@ Use **Open camera** or **Upload score** to read printed piano music, including m
 
 The published site contains the browser application and its recognition files. It has no account system, upload endpoint, or PC scanner dependency. The models and software download from GitHub Pages during setup. Speed, recognition accuracy and available memory depend on the device and the score. Crop photos to keep both piano staves clear.
 
-Choose **Learn to read** to explore notes on the treble and bass staves, quiz yourself, and hear or tap written rhythms. Lessons work without downloading the scanner.
+Choose **Learn to read** to see labeled whole notes on the treble and bass staves. Tap a note to hear it and see its piano key, or open **Rhythm & notation** to hear and tap written rhythms. Lessons work without downloading the scanner.
 
 ## Source and licenses
 
