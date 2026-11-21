@@ -1,0 +1,14 @@
+ScoreLens browser MusicXML conversion
+
+Pyodide 0.27.8, distributed under the Mozilla Public License 2.0.
+Source: https://github.com/pyodide/pyodide/tree/0.27.8
+License: ./pyodide/LICENSE
+CPython 3.12.7 standard library.
+Source: https://github.com/python/cpython/tree/v3.12.7
+License: ./pyodide/CPYTHON-LICENSE
+
+Homr's exporter documents the slur-to-tie rule applied at PDF page joins:
+https://github.com/liebharc/homr/blob/main/homr/music_xml_generator.py
+
+ScoreLens source for the shipped converter: ./score-conversion-worker.js,
+./score.py, ./score_conversion.py and ../../score-conversion.js.

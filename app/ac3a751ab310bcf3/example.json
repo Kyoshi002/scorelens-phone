@@ -1,0 +1,346 @@
+{
+  "title": "Morning Walk",
+  "timeSignature": "3/4",
+  "key": "C major",
+  "keyDetail": "The score specifies major. The signature has no sharps or flats.",
+  "measures": [
+    {
+      "number": "1",
+      "duration": 3.0,
+      "timeSignature": "3/4",
+      "countPattern": "1 · 2 · 3",
+      "pickup": false,
+      "key": "C major",
+      "keyDetail": "The score specifies major. The signature has no sharps or flats.",
+      "events": [
+        {
+          "start": 0.0,
+          "duration": 3.0,
+          "notes": [
+            {
+              "name": "E4",
+              "midi": 64,
+              "hand": "right",
+              "duration": 1.0,
+              "rhythm": "quarter note",
+              "finger": 3,
+              "fingeringSource": "suggested",
+              "attack": true,
+              "position": [
+                405,
+                174
+              ],
+              "playDuration": 1.0
+            },
+            {
+              "name": "C3",
+              "midi": 48,
+              "hand": "left",
+              "duration": 3.0,
+              "rhythm": "Dotted half note",
+              "finger": 3,
+              "fingeringSource": "suggested",
+              "attack": true,
+              "position": [
+                406,
+                369
+              ],
+              "playDuration": 3.0
+            }
+          ],
+          "rests": [],
+          "count": "1",
+          "rhythm": "quarter note + Dotted half note",
+          "technique": "Start both hands together, then hold each sound for its own written length."
+        },
+        {
+          "start": 1.0,
+          "duration": 1.0,
+          "notes": [
+            {
+              "name": "G4",
+              "midi": 67,
+              "hand": "right",
+              "duration": 1.0,
+              "rhythm": "quarter note",
+              "finger": 4,
+              "fingeringSource": "suggested",
+              "attack": true,
+              "position": [
+                494,
+                151
+              ],
+              "playDuration": 1.0
+            }
+          ],
+          "rests": [],
+          "count": "2",
+          "rhythm": "quarter note",
+          "technique": "Land with a naturally curved finger and release after the written length."
+        },
+        {
+          "start": 2.0,
+          "duration": 1.0,
+          "notes": [
+            {
+              "name": "A4",
+              "midi": 69,
+              "hand": "right",
+              "duration": 1.0,
+              "rhythm": "quarter note",
+              "finger": 5,
+              "fingeringSource": "suggested",
+              "attack": true,
+              "position": [
+                584,
+                140
+              ],
+              "playDuration": 1.0
+            }
+          ],
+          "rests": [],
+          "count": "3",
+          "rhythm": "quarter note",
+          "technique": "Land with a naturally curved finger and release after the written length."
+        }
+      ]
+    },
+    {
+      "number": "2",
+      "duration": 3.0,
+      "timeSignature": "3/4",
+      "countPattern": "1 · 2 · 3",
+      "pickup": false,
+      "key": "C major",
+      "keyDetail": "The score specifies major. The signature has no sharps or flats.",
+      "events": [
+        {
+          "start": 0.0,
+          "duration": 3.0,
+          "notes": [
+            {
+              "name": "G4",
+              "midi": 67,
+              "hand": "right",
+              "duration": 2.0,
+              "rhythm": "half note",
+              "finger": 4,
+              "fingeringSource": "suggested",
+              "attack": true,
+              "position": [
+                695,
+                150
+              ],
+              "playDuration": 2.0
+            },
+            {
+              "name": "C3",
+              "midi": 48,
+              "hand": "left",
+              "duration": 3.0,
+              "rhythm": "Dotted half note",
+              "finger": 3,
+              "fingeringSource": "suggested",
+              "attack": true,
+              "position": [
+                695,
+                370
+              ],
+              "playDuration": 3.0
+            }
+          ],
+          "rests": [],
+          "count": "1",
+          "rhythm": "half note + Dotted half note",
+          "technique": "Start both hands together, then hold each sound for its own written length."
+        },
+        {
+          "start": 2.0,
+          "duration": 1.0,
+          "notes": [
+            {
+              "name": "E4",
+              "midi": 64,
+              "hand": "right",
+              "duration": 1.0,
+              "rhythm": "quarter note",
+              "finger": 2,
+              "fingeringSource": "suggested",
+              "attack": true,
+              "position": [
+                805,
+                174
+              ],
+              "playDuration": 1.0
+            }
+          ],
+          "rests": [],
+          "count": "3",
+          "rhythm": "quarter note",
+          "technique": "Land with a naturally curved finger and release after the written length."
+        }
+      ]
+    },
+    {
+      "number": "3",
+      "duration": 3.0,
+      "timeSignature": "3/4",
+      "countPattern": "1 · 2 · 3",
+      "pickup": false,
+      "key": "C major",
+      "keyDetail": "The score specifies major. The signature has no sharps or flats.",
+      "events": [
+        {
+          "start": 0.0,
+          "duration": 3.0,
+          "notes": [
+            {
+              "name": "D4",
+              "midi": 62,
+              "hand": "right",
+              "duration": 1.0,
+              "rhythm": "quarter note",
+              "finger": 1,
+              "fingeringSource": "suggested",
+              "attack": true,
+              "position": [
+                944,
+                186
+              ],
+              "playDuration": 1.0
+            },
+            {
+              "name": "D3",
+              "midi": 50,
+              "hand": "left",
+              "duration": 3.0,
+              "rhythm": "Dotted half note",
+              "finger": 4,
+              "fingeringSource": "suggested",
+              "attack": true,
+              "position": [
+                944,
+                357
+              ],
+              "playDuration": 3.0
+            }
+          ],
+          "rests": [],
+          "count": "1",
+          "rhythm": "quarter note + Dotted half note",
+          "technique": "Start both hands together, then hold each sound for its own written length."
+        },
+        {
+          "start": 1.0,
+          "duration": 1.0,
+          "notes": [
+            {
+              "name": "F4",
+              "midi": 65,
+              "hand": "right",
+              "duration": 1.0,
+              "rhythm": "quarter note",
+              "finger": 2,
+              "fingeringSource": "suggested",
+              "attack": true,
+              "position": [
+                1035,
+                162
+              ],
+              "playDuration": 1.0
+            }
+          ],
+          "rests": [],
+          "count": "2",
+          "rhythm": "quarter note",
+          "technique": "Land with a naturally curved finger and release after the written length."
+        },
+        {
+          "start": 2.0,
+          "duration": 1.0,
+          "notes": [
+            {
+              "name": "A4",
+              "midi": 69,
+              "hand": "right",
+              "duration": 1.0,
+              "rhythm": "quarter note",
+              "finger": 4,
+              "fingeringSource": "suggested",
+              "attack": true,
+              "position": [
+                1124,
+                139
+              ],
+              "playDuration": 1.0
+            }
+          ],
+          "rests": [],
+          "count": "3",
+          "rhythm": "quarter note",
+          "technique": "Land with a naturally curved finger and release after the written length."
+        }
+      ]
+    },
+    {
+      "number": "4",
+      "duration": 3.0,
+      "timeSignature": "3/4",
+      "countPattern": "1 · 2 · 3",
+      "pickup": false,
+      "key": "C major",
+      "keyDetail": "The score specifies major. The signature has no sharps or flats.",
+      "events": [
+        {
+          "start": 0.0,
+          "duration": 3.0,
+          "notes": [
+            {
+              "name": "C5",
+              "midi": 72,
+              "hand": "right",
+              "duration": 3.0,
+              "rhythm": "Dotted half note",
+              "finger": 5,
+              "fingeringSource": "suggested",
+              "attack": true,
+              "position": [
+                1233,
+                116
+              ],
+              "playDuration": 3.0
+            },
+            {
+              "name": "C3",
+              "midi": 48,
+              "hand": "left",
+              "duration": 3.0,
+              "rhythm": "Dotted half note",
+              "finger": 5,
+              "fingeringSource": "suggested",
+              "attack": true,
+              "position": [
+                1234,
+                370
+              ],
+              "playDuration": 3.0
+            }
+          ],
+          "rests": [],
+          "count": "1",
+          "rhythm": "Dotted half note",
+          "technique": "Start both hands together, then hold each sound for its own written length."
+        }
+      ]
+    }
+  ],
+  "tips": [
+    "Finger numbers run from 1 at the thumb through 5 at the little finger on each hand. Try suggested choices slowly and adjust for a comfortable reach.",
+    "Tap an even pulse and say the counts aloud. The ampersand marks a halfway subdivision and “la li” marks the second and third parts of a compound beat.",
+    "Practice one hand at a time. When joining them, use the count to line up notes that start together and keep holding notes for their written lengths."
+  ],
+  "imageSize": [
+    1464,
+    486
+  ]
+}

@@ -1,0 +1,26 @@
+ScoreLens on-device OMR engine
+
+Licensed components
+  Partsong worker and WebAssembly: AGPL-3.0-only.
+  homr-rs and homr ONNX models: AGPL-3.0.
+  ONNX Runtime Web: MIT. See source/onnxruntime-LICENSE and
+    source/onnxruntime-ThirdPartyNotices.txt for notices.
+
+Corresponding source
+  scorelens-omr-worker.zip contains the adapted worker, generator, and
+    original Partsong engine sources and build scripts (d1bf4778b3b30f3e3915777abdd72e732bd59330).
+  homr-rs-source.zip is the dependency source at f6309104e3582bae8df22669f0325e7fd1a7ab32.
+  homr-0.7.1-source.zip includes the model architecture and training code
+    from homr v0.7.1 (0dd86956b15982c4e388029054920ce655a13886).
+  ONNX Runtime Web 1.30.0 source: https://github.com/microsoft/onnxruntime/tree/v1.30.0
+    Build: https://onnxruntime.ai/docs/build/web.html
+  Run the upstream scripts/build-omr.sh from its extracted project,
+    with the upstream omr-rs directory, Rust and the wasm32-unknown-unknown
+    target. The script documents the nightly std tools for threaded builds.
+  Run ScoreLens tools/prepare_phone_engine.py to reconstruct this browser
+    engine from verified published assets or an existing local model cache.
+
+Sources
+  https://github.com/pzfreo/partsong/tree/d1bf4778b3b30f3e3915777abdd72e732bd59330
+  https://github.com/pzfreo/homr-rs/tree/f6309104e3582bae8df22669f0325e7fd1a7ab32
+  https://github.com/liebharc/homr/tree/0dd86956b15982c4e388029054920ce655a13886
