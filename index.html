@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' data: blob:; object-src 'none'; form-action 'none'; base-uri 'none'" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#f7f7f0" />
+    <meta
+      name="description"
+      content="Read printed piano music with your camera, then explore each beat, note, and fingering."
+    />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./app/6eea7dcf8ec4d0b8/icon-192.png" />
+    <link rel="apple-touch-icon" href="./app/6eea7dcf8ec4d0b8/icon-192.png" />
+    <link rel="stylesheet" href="./app/6eea7dcf8ec4d0b8/style.css" />
+    <link rel="stylesheet" href="./app/6eea7dcf8ec4d0b8/follow.css" />
+    <title>ScoreLens · Piano score reader</title>
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="mast-inner">
+        <a class="brand" href="#reader" aria-label="ScoreLens reader"
+          ><span class="brandmark"><i data-icon="brand"></i></span>ScoreLens</a
+        >
+        <nav aria-label="Workspace">
+          <a href="#reader" id="nav-reader"><i data-icon="focus"></i>Reader</a
+          ><a href="#keys" id="nav-keys"><i data-icon="book"></i>Learn keys</a
+          ><a href="#follow" id="nav-follow"><i data-icon="piano"></i>Play along</a
+          ><a href="#library" id="nav-library"><i data-icon="bookmark"></i>Saved pieces</a>
+        </nav>
+        <span class="instrument"><i data-icon="piano"></i>Piano</span>
+      </div>
+    </header>
+    <main>
+      <section id="reader">
+        <div class="intro">
+          <h1>Score reader<span>.</span></h1>
+          <p>Scan a passage and learn how to play it, note by note.</p>
+        </div>
+        <div class="workspace">
+          <section class="panel scanner" aria-labelledby="scan-title">
+            <div class="panel-head">
+              <h2 id="scan-title"><i data-icon="focus"></i>Score scanner</h2>
+              <span class="status-pill"><b></b><span id="camera-label">Camera off</span></span>
+            </div>
+            <div class="phone-setup" aria-label="Offline scanner setup">
+              <strong id="scanner-state">Preparing offline setup…</strong>
+              <p id="scanner-detail" role="status">Open this app from your Home Screen before downloading the scanner. Photos and PDFs are read on this device.</p>
+              <progress id="scanner-progress" max="100" value="0" hidden aria-label="Scanner download progress"></progress>
+              <button type="button" id="scanner-install" class="secondary" disabled>Download offline scanner</button>
+            </div>
+
+            <div class="viewfinder" id="viewfinder">
+              <div
+                class="paper-preview"
+                id="sample-paper"
+                aria-label="Example sheet music for Morning Walk"
+              >
+                <div class="sheet">
+                  <small>PIANO STUDY</small><strong>Morning Walk</strong><em>Andante</em>
+                  <div class="sample-score">
+                    <img
+                      src="./app/6eea7dcf8ec4d0b8/morning-walk.png"
+                      alt="Four measures of printed piano music in three-four time"
+                    />
+                    <div id="sample-marks" class="marks"></div>
+                  </div>
+                </div>
+              </div>
+              <img id="photo" class="media" alt="Passage sent for recognition" hidden />
+              <video id="camera" class="media" muted autoplay playsinline hidden></video>
+              <div id="photo-marks" class="marks"></div>
+              <div class="corners" aria-hidden="true"><b></b><b></b><b></b><b></b></div>
+              <span class="view-tag" id="view-tag"><span></span> Example score</span>
+            </div>
+            <div class="pdf-navigation" id="pdf-navigation" hidden>
+              <label for="pdf-page">PDF page</label>
+              <select id="pdf-page"></select>
+            </div>
+            <div class="scan-actions">
+              <button id="open-camera" class="primary">
+                <i data-icon="camera"></i><span>Open camera</span>
+              </button>
+              <button id="open-photo" class="secondary">
+                <i data-icon="upload"></i>Upload score
+              </button>
+              <input id="file" type="file" accept="image/*,application/pdf,.pdf" hidden />
+            </div>
+            <div class="scan-feedback">
+              <span id="scan-message" role="status"
+                >Upload a photo or PDF, or frame a passage with the camera.</span
+              ><button id="rescan" class="link-button" hidden>Scan again</button>
+              <button id="cancel-scan" class="link-button" hidden>Cancel scan</button>
+            </div>
+            <p id="picked-note" role="status" hidden></p>
+          </section>
+          <section class="panel guide" aria-labelledby="guide-title">
+            <div class="panel-head">
+              <h2 id="guide-title"><i data-icon="book"></i>Passage guide</h2>
+              <button id="save" class="icon-button" title="Save piece" aria-label="Save piece">
+                <i data-icon="bookmark"></i>
+              </button>
+            </div>
+            <div class="guide-body">
+              <div class="type-label" id="source">Built-in study</div>
+              <h3 id="piece-title">Morning Walk</h3>
+              <div class="metrics">
+                <div><span>Time signature</span><strong id="meter">3/4</strong></div>
+                <div><span>Key</span><strong id="key">C major</strong></div>
+              </div>
+              <p id="key-detail"></p>
+              <div class="guide-links">
+                <div id="count-guide">
+                  <span class="type-label">Count it</span>
+                  <p id="counts"></p>
+                </div>
+                <button id="learn-detected" class="learn-link">Learn this key</button>
+              </div>
+              <div class="tip">
+                <div class="tip-title"><i data-icon="bulb"></i>Practice tip</div>
+                <p id="tip">Count three even beats in each measure.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <section class="panel explorer" aria-labelledby="explorer-title">
+          <div class="explore-head">
+            <div>
+              <h2 id="explorer-title"><i data-icon="piano"></i>Note explorer</h2>
+              <p>Tap a beat to hear its notes and see where your fingers go.</p>
+            </div>
+            <div class="measure-controls">
+              <button id="prev" class="icon-button" aria-label="Previous measure">
+                <i data-icon="left"></i></button
+              ><label class="sr" for="measure">Measure</label
+              ><select id="measure"></select
+              ><button id="next" class="icon-button" aria-label="Next measure">
+                <i data-icon="right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="practice-columns">
+            <div class="sequence">
+              <div class="events" id="events"></div>
+              <p id="rhythm"></p>
+              <div class="transport">
+                <button class="play" id="play">
+                  <i data-icon="play"></i><span>Play passage</span></button
+                ><label class="tempo"
+                  ><input
+                    type="number"
+                    id="tempo"
+                    min="30"
+                    max="200"
+                    step="1"
+                    value="72"
+                    aria-label="Tempo in quarter notes per minute"
+                  />
+                  BPM</label
+                >
+              </div>
+              <button id="follow-score" class="learn-link">Play along with this passage →</button>
+            </div>
+            <div class="keyboard-section">
+              <div class="keyboard" id="keyboard" role="img" aria-label="Piano keyboard"></div>
+              <div id="fingers"></div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section id="keys" hidden>
+        <div class="intro">
+          <h1>Learn keys<span>.</span></h1>
+          <p>Explore a key, learn its scale, then try it at the piano.</p>
+        </div>
+        <div class="key-workspace">
+          <section class="panel catalog">
+            <div class="panel-head">
+              <h2><i data-icon="book"></i>Key library</h2>
+            </div>
+            <div class="catalog-body">
+              <div class="switch" role="group" aria-label="Scale mode">
+                <button id="mode-major">Major</button><button id="mode-minor">Natural minor</button>
+              </div>
+              <div id="key-options" class="key-options" aria-label="Choose a key"></div>
+            </div>
+          </section>
+          <section class="panel lesson" aria-labelledby="lesson-name">
+            <div id="linked-keys" class="linked-keys" hidden></div>
+            <div class="lesson-heading">
+              <div>
+                <span class="type-label">Scale lesson</span>
+                <h2 id="lesson-name"></h2>
+              </div>
+            </div>
+            <figure id="scale-notation">
+              <figcaption>Read the score</figcaption>
+              <div class="scale-paper"><img alt="" /></div>
+              <p>
+                Suggested fingerings appear above the treble staff for your right hand and below the
+                bass staff for your left. On either hand, 1 is your thumb and 5 is your little
+                finger.
+              </p>
+              <small class="engraving-credit"
+                >Music engraving by <a href="https://www.verovio.org/">Verovio</a></small
+              >
+            </figure>
+            <h3 class="lesson-subhead">Spot the key signature</h3>
+            <p id="signature-clue"></p>
+            <div class="lesson-facts">
+              <div><span>Key signature</span><strong id="lesson-sig"></strong></div>
+              <div><span>Tonic triad</span><strong id="lesson-triad"></strong></div>
+            </div>
+            <h3 class="lesson-subhead">Play the scale</h3>
+            <p id="lesson-explanation"></p>
+            <p id="step-pattern"></p>
+            <label class="hand-choice"
+              >Practice hands
+              <select id="scale-hand">
+                <option value="both">Both hands</option>
+                <option value="right">Right hand</option>
+                <option value="left">Left hand</option>
+              </select>
+            </label>
+            <div id="scale-notes" class="scale-notes" aria-label="Hear a scale degree"></div>
+            <div id="scale-piano" class="keyboard" role="img" aria-label="Scale keyboard"></div>
+            <p id="scale-instruction"></p>
+            <div class="lesson-actions">
+              <button id="hear-scale" class="secondary">
+                <i data-icon="play"></i><span>Hear scale</span></button
+              ><button id="practice-scale" class="primary">
+                <i data-icon="piano"></i>Practice this scale
+              </button>
+            </div>
+          </section>
+        </div>
+      </section>
+      <section id="follow" hidden>
+        <div class="intro">
+          <h1>Play along<span>.</span></h1>
+          <p>Follow the falling notes. The music waits for you to play the right keys.</p>
+        </div>
+        <div class="practice-source">
+          <label for="lesson-source">Practice material</label
+          ><select id="lesson-source">
+            <option value="passage">Current passage</option>
+            <option value="scale">Current scale</option>
+          </select>
+        </div>
+        <div id="follow-panel"></div>
+      </section>
+      <section id="library" hidden>
+        <div class="intro">
+          <h1>Saved pieces<span>.</span></h1>
+          <p>Passages saved for practice on this device.</p>
+        </div>
+        <div id="saved-list"></div>
+      </section>
+      <div id="notice" role="status" aria-live="polite"></div>
+    </main>
+    <a class="phone-source" href="https://github.com/Kyoshi002/scorelens-phone">Source code and licenses</a>
+    <script type="module" src="./app/6eea7dcf8ec4d0b8/app.js"></script>
+  </body>
+</html>

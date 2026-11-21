@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "ScoreLens \u00b7 Piano score reader",
+  "short_name": "ScoreLens",
+  "description": "Scan printed piano music and practice one passage at a time.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f7f1",
+  "theme_color": "#f7f7f0",
+  "icons": [
+    {
+      "src": "./app/6eea7dcf8ec4d0b8/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./app/6eea7dcf8ec4d0b8/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
